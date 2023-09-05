@@ -178,7 +178,7 @@
             Delete.Name = "Delete";
             Delete.Size = new Size(95, 56);
             Delete.TabIndex = 3;
-            Delete.Text = "Die";
+            Delete.Text = "Black";
             Delete.UseVisualStyleBackColor = true;
             Delete.Click += Delete_Click;
             // 

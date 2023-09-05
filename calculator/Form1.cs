@@ -6,9 +6,6 @@ namespace calculator
     public partial class Form1 : Form
     {
 
-        double FirstDigit, SecondDigit, Result;
-        string Operators;
-
         //输入值
         double Number = 0;
 
@@ -41,14 +38,13 @@ namespace calculator
         public void AddNum(int num)
         {
             Number = Number * 10 + num;
-            DisPlay.Text = Convert.ToString(Number); 
+            DisPlay.Text = Convert.ToString(Number);
         }
 
         //重置显示栏的Number值
-        public void Reset( )
+        public void Reset()
         {
             TestNum = Number;
-            DisPlay.Text = Convert.ToString(TestNum);
         }
 
         public void MathematicalOperations(string str)
@@ -65,9 +61,9 @@ namespace calculator
                     DisPlay.Text = Convert.ToString(TestNum);
                     break;
                 case Operator.Minus:
-                    
-                    ResultNum = Number - AndNumber;
-                    AndNumber = Number - AndNumber;
+
+                    ResultNum = AndNumber - Number;
+                    AndNumber = AndNumber - Number;
                     Reset();
                     DisPlay1.Text = ResultNum + str;
                     Clear.PerformClick();
@@ -75,25 +71,32 @@ namespace calculator
                     break;
                 case Operator.Multiplication:
 
-                    if(Number == 0)
-                    {
-                        break;
-                    }
-                    
-                    ResultNum = AndNumber * Number;
-                    AndNumber = AndNumber*Number;
+                    //if (Number == 0)
+                    //{
+                    //    break;
+                    //}
+
+                   // ResultNum =  Number;
+                    AndNumber =   Number;
                     Reset();
-                    DisPlay1.Text = ResultNum + str;
+                    DisPlay1.Text = Number + str;
                     Clear.PerformClick();
                     DisPlay.Text = Convert.ToString(TestNum);
                     break;
                 case Operator.Divison:
-                    ResultNum = AndNumber / Number;
-                    AndNumber = AndNumber / Number;
+
+                    AndNumber = Number;
                     Reset();
-                    DisPlay1.Text = ResultNum + str;
+                    DisPlay1.Text = Number + str;
                     Clear.PerformClick();
                     DisPlay.Text = Convert.ToString(TestNum);
+
+                    // ResultNum = AndNumber / Number;
+                    //AndNumber = AndNumber / Number;
+                    //Reset();
+                    //DisPlay1.Text = ResultNum + str;
+                    //Clear.PerformClick();
+                    //DisPlay.Text = Convert.ToString(TestNum);
                     break;
             }
 
@@ -239,7 +242,7 @@ namespace calculator
         private void Divison_Click(object sender, EventArgs e)
         {
             //切换成为除号模式
-            Mode = Operator.Minus;
+            Mode = Operator.Divison;
             str = "/";
             MathematicalOperations(str);
         }
@@ -259,11 +262,26 @@ namespace calculator
 
         private void Amount_Click(object sender, EventArgs e)
         {
-           
-            DisPlay1.Text = AndNumber + str + TestNum + " = ";
-            MathematicalOperations(str);
-            Clear.PerformClick();
-            DisPlay.Text = Convert.ToString(ResultNum);
+            switch (Mode)
+            {
+                case Operator.Plus:
+                    ResultNum = AndNumber + Number;
+                    DisPlay1.Text = Convert.ToString(ResultNum);
+                    break;
+                case Operator.Minus:
+                    ResultNum = AndNumber - Number;
+                    DisPlay1.Text = Convert.ToString(ResultNum);
+                    break;
+                case Operator.Multiplication:
+
+                    ResultNum = AndNumber * Number;
+                    DisPlay1.Text = Convert.ToString(ResultNum);
+                    break;
+                case Operator.Divison:
+                    ResultNum = AndNumber / Number;
+                    DisPlay1.Text = Convert.ToString(ResultNum);
+                    break;
+            }
         }
     }
 }
