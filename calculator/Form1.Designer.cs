@@ -46,10 +46,17 @@
             Minus = new Button();
             Multiplication = new Button();
             Divison = new Button();
-            checkBox1 = new CheckBox();
+            More = new CheckBox();
             DisPlay1 = new Label();
             DisPlay = new Label();
             CE = new Button();
+            textBox1 = new TextBox();
+            button7 = new Button();
+            button6 = new Button();
+            button3 = new Button();
+            button5 = new Button();
+            button2 = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // Clear
@@ -232,16 +239,16 @@
             Divison.UseVisualStyleBackColor = true;
             Divison.Click += Divison_Click;
             // 
-            // checkBox1
+            // More
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(366, 484);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(75, 21);
-            checkBox1.TabIndex = 9;
-            checkBox1.Text = "更多功能";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            More.AutoSize = true;
+            More.Location = new Point(366, 484);
+            More.Name = "More";
+            More.Size = new Size(75, 21);
+            More.TabIndex = 9;
+            More.Text = "更多功能";
+            More.UseVisualStyleBackColor = true;
+            More.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // DisPlay1
             // 
@@ -274,14 +281,101 @@
             CE.UseVisualStyleBackColor = true;
             CE.Click += button0_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(481, 20);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(500, 94);
+            textBox1.TabIndex = 21;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(873, 230);
+            button7.Name = "button7";
+            button7.Size = new Size(108, 63);
+            button7.TabIndex = 14;
+            button7.Text = "Tan";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            button7.MouseEnter += button7_MouseEnter;
+            button7.MouseLeave += button7_MouseLeave;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(678, 230);
+            button6.Name = "button6";
+            button6.Size = new Size(108, 63);
+            button6.TabIndex = 16;
+            button6.Text = "Sin";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            button6.MouseEnter += button6_MouseEnter;
+            button6.MouseLeave += button6_MouseLeave;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(873, 154);
+            button3.Name = "button3";
+            button3.Size = new Size(108, 63);
+            button3.TabIndex = 17;
+            button3.Text = "Log";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            button3.MouseEnter += button3_MouseEnter;
+            button3.MouseLeave += button3_MouseLeave;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(481, 230);
+            button5.Name = "button5";
+            button5.Size = new Size(108, 63);
+            button5.TabIndex = 18;
+            button5.Text = "Cos";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            button5.MouseEnter += button5_MouseEnter;
+            button5.MouseLeave += button5_MouseLeave;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(678, 154);
+            button2.Name = "button2";
+            button2.Size = new Size(108, 63);
+            button2.TabIndex = 19;
+            button2.Text = "Sqrt";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_2;
+            button2.MouseEnter += button2_MouseEnter;
+            button2.MouseLeave += button2_MouseLeave;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(481, 154);
+            button1.Name = "button1";
+            button1.Size = new Size(108, 63);
+            button1.TabIndex = 20;
+            button1.Text = "Abs";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_2;
+            button1.MouseEnter += button1_MouseEnter;
+            button1.MouseLeave += button1_MouseLeave;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(474, 555);
+            ClientSize = new Size(467, 555);
+            Controls.Add(textBox1);
+            Controls.Add(button7);
+            Controls.Add(button6);
+            Controls.Add(button3);
+            Controls.Add(button5);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(DisPlay);
             Controls.Add(DisPlay1);
-            Controls.Add(checkBox1);
+            Controls.Add(More);
             Controls.Add(Divison);
             Controls.Add(Multiplication);
             Controls.Add(Minus);
@@ -328,9 +422,16 @@
         private Button Minus;
         private Button Multiplication;
         private Button Divison;
-        private CheckBox checkBox1;
+        private CheckBox More;
         private Label DisPlay1;
         private Label DisPlay;
         private Button CE;
+        private TextBox textBox1;
+        private Button button7;
+        private Button button6;
+        private Button button3;
+        private Button button5;
+        private Button button2;
+        private Button button1;
     }
 }
